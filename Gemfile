@@ -1,7 +1,9 @@
 source "https://rubygems.org"
 
-ruby-2.4.0
+ruby '2.3.3'
 
 gem 'sinatra'
 gem 'rspec-sinatra'
 gem 'capybara'
+gem 'shotgun'
+gem 'selenium-webdriver'
