@@ -38,3 +38,19 @@ feature "players can attack each other and get a confirmation" do
   end
 
 end
+
+feature "when player 1 attacks, player 2 should lose 10 hit points" do
+
+  scenario "both players should start with 60 hit points" do
+    sign_in_and_play
+    within("div#player_two_id") { expect(page).to have_content("60") }
+  end
+
+  scenario "player 2 loses 10 hit points after attack" do
+    sign_in_and_play
+    click_button "Attack"
+    visit '/play'
+    within("div#player_two_id") { expect(page).to have_content("50") }
+  end
+
+end
