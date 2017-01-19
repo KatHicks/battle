@@ -1,18 +1,18 @@
 <h1> <%= @player_one %> vs. <%= @player_two %> </h1>
 
-<div id="player_one">
+<div id="player_one_id">
   <h2>Player 1: <%= @player_one %></h2>
-  <p>HP</p>
+  <p id="hit_points_id">HP</p>
 </div>
 
-<div id="player_two">
+<div id="player_two_id">
   <h2>Player 2: <%= @player_two %></h2>
-  <p>HP</p>
+  <p id="hit_points_id">HP</p>
 </div>
 
 <div id="tools">
   <form action="/attack" method="post">
-    <input type="submit" value="Attack">
+    <input id="attack_button_id" type="submit" value="Attack">
   </form>
 </div>
 
