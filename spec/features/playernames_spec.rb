@@ -14,4 +14,10 @@ RSpec.feature "players start a fight by entering their names and seeing them", :
     end
   end
 
+  scenario "player one can attack player two and get a confirmation" do
+    sign_in_and_play
+    click_button "Attack"
+    expect(page).to have_content("Successful attack!")
+  end
+
 end

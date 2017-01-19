@@ -9,3 +9,13 @@
   <h2>Player 2: <%= @player_two %></h2>
   <p>HP</p>
 </div>
+
+<div id="tools">
+  <form action="/attack" method="post">
+    <input type="submit" value="Attack">
+  </form>
+</div>
+
+<% if @attack %>
+  <h2>Successful attack!</h2>
+<% end %>
