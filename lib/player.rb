@@ -9,12 +9,12 @@ class Player
     @points = points
   end
 
-  def attack(opposing_player)
-    opposing_player.deduct_points
-  end
-
   def deduct_points
     @points -= 10
+  end
+
+  def reset_points
+    @points = INITIAL_HP
   end
 
 end
