@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'player'
 
 feature "players start a fight by entering their names and seeing them", :type => :feature do
 
@@ -88,6 +89,20 @@ feature "players switching turns" do
     sign_in_and_play
     attack_and_confirm
     expect(page).to have_content("It's Bob's turn!")
+  end
+
+end
+
+feature "players can lose" do
+
+  scenario "if a player's score reaches 0HP, they lose" do
+    play_through = ((Player::INITIAL_HP / 10) - 1) * 2
+
+    sign_in_and_play
+    play_through.times { attack_and_confirm }
+    click_button "Attack"
+
+    expect(page).to have_content("Bob, you lose!")
   end
 
 end

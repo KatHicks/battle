@@ -23,4 +23,8 @@ class Game
     end
   end
 
+  def game_over?
+    player_one.points <= 0 || player_two.points <= 0
+  end
+
 end

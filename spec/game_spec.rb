@@ -5,7 +5,18 @@ describe Game do
   let(:stefan) { spy("Player") }
   let(:kat) { spy("Player") }
 
+  let(:bob) { spy("Player") }
+
+  before(:each) do
+    allow(stefan).to receive(:points).and_return(60)
+    allow(kat).to receive(:points).and_return(60)
+
+    allow(bob).to receive(:points).and_return(0)
+  end
+
   subject(:game) { described_class.new(stefan, kat) }
+
+  subject(:lost_game) { described_class.new(stefan, bob) }
 
   context "upon initialisation" do
     it 'the game starts with two player objects' do
@@ -25,6 +36,16 @@ describe Game do
     it 'switches the turn' do
       expect{ game.switch_turn }.to change{ game.turns[:attacker] }
       expect{ game.switch_turn }.to change{ game.turns[:attacked] }
+    end
+  end
+
+  context '#game_over?' do
+    it 'returns false at the beginning' do
+      expect(game.game_over?).to be false
+    end
+
+    it 'returns true when a player has zero points' do
+      expect(lost_game.game_over?).to be true
     end
   end
 
