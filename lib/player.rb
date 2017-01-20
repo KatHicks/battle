@@ -13,8 +13,4 @@ class Player
     @points -= 10
   end
 
-  def reset_points
-    @points = INITIAL_HP
-  end
-
 end
