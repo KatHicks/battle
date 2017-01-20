@@ -49,8 +49,24 @@ feature "when player 1 attacks, player 2 should lose 10 hit points" do
   scenario "player 2 loses 10 hit points after attack" do
     sign_in_and_play
     click_button "Attack"
-    visit '/play'
+    click_link "OK"
     within("div#player_two_id") { expect(page).to have_content("50") }
+  end
+
+end
+
+feature "players switching turns" do
+
+  scenario "game starts with player 1's turn" do
+    sign_in_and_play
+    expect(page).to have_content("It's Kat's turn!")
+  end
+
+  scenario "switches to player 2's turn after attack" do
+    sign_in_and_play
+    click_button "Attack"
+    click_link "OK"
+    expect(page).to have_content("It's Bob's turn!")
   end
 
 end

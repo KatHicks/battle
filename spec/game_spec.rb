@@ -16,8 +16,15 @@ describe Game do
 
   context '#attack' do
     it 'deducts points from the attacked player' do
-      game.attack(kat)
+      game.attack
       expect(kat).to have_received(:deduct_points)
+    end
+  end
+
+  context '#switch_turn' do
+    it 'switches the turn' do
+      expect{ game.switch_turn }.to change{ game.turns[:attacker] }
+      expect{ game.switch_turn }.to change{ game.turns[:attacked] }
     end
   end
 
