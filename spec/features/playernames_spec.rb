@@ -31,10 +31,17 @@ feature "players can attack each other and get a confirmation" do
     expect(page).to have_selector("//input", id: "attack_button_id")
   end
 
-  scenario "player gets confirmation after attack" do
+  scenario "first player gets confirmation after attack" do
     sign_in_and_play
     click_button "Attack"
     expect(page).to have_content("Kat attacked Bob")
+  end
+
+  scenario "second player gets confirmation after attack" do
+    sign_in_and_play
+    attack_and_confirm
+    click_button "Attack"
+    expect(page).to have_content("Bob attacked Kat")
   end
 
 end
@@ -48,9 +55,24 @@ feature "when player 1 attacks, player 2 should lose 10 hit points" do
 
   scenario "player 2 loses 10 hit points after attack" do
     sign_in_and_play
-    click_button "Attack"
-    click_link "OK"
+    attack_and_confirm
     within("div#player_two_id") { expect(page).to have_content("50") }
+  end
+
+end
+
+feature "when player 2 attacks, player 1 should lose 10 hit points" do
+
+  scenario "both players should start with 60 hit points" do
+    sign_in_and_play
+    within("div#player_one_id") { expect(page).to have_content("60") }
+  end
+
+  scenario "player 1 loses 10 hit points after attack" do
+    sign_in_and_play
+    attack_and_confirm
+    attack_and_confirm
+    within("div#player_one_id") { expect(page).to have_content("50") }
   end
 
 end
@@ -64,8 +86,7 @@ feature "players switching turns" do
 
   scenario "switches to player 2's turn after attack" do
     sign_in_and_play
-    click_button "Attack"
-    click_link "OK"
+    attack_and_confirm
     expect(page).to have_content("It's Bob's turn!")
   end
 
