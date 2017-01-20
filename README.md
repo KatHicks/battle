@@ -1,4 +1,16 @@
-Basic user stories:
+# Learning web application
+
+### Week 3 at Makers Academy
+
+**Goal:**
+
+- Can you build a web app?
+
+**Project:**
+
+Create a basic online game called 'Battle' that satisfies the following user stories.
+
+**User stories:**
 
 ```
 As two Players,
@@ -38,38 +50,14 @@ So I can Lose a game of Battle,
 I want to see a 'Lose' message if I reach 0HP first
 ```
 
-Advanced user stories:
+**Instructions for use:**
 
-```
-As a Player,
-So I can play a suspenseful game of Battle,
-I want all Attacks to deal a random amount of damage
+- Start by installing all of the dependencies using bundler:
 
-As a lonely Player,
-So I can keep my Battle skills up to scratch
-I want to play a Computerised opponent
+`$ bundle install`
 
-As a Player,
-So I can enjoy a game of Battle with more variety,
-I want to choose from a range of attacks I could make
+- Run the app on a local host on the command line using either:
 
-As a Player,
-So I can better enjoy a game of Battle,
-I want some of my attacks to Paralyse an opponent (chance of losing their next attack)
+`$ ruby app.rb` or `$ shotgun config.ru`
 
-As a Player,
-So I can better enjoy a game of Battle,
-I want one of my attacks to have a chance of Poisoning my Opponent (Opponent takes a small random amount of damage at the beginning of their turn)
-
-As a Player,
-So I can better enjoy a game of Battle,
-I want to make an attack that has a chance of sending my Opponent to Sleep (Opponent definitely misses next turn)
-
-As a Player,
-So I can extend my joyous experience of Battle,
-I want to have an attack that heals some of my Hit Points
-
-As a Player,
-So I can enjoy my game of Battle,
-I want a sexy user interface
-```
+  - Note that shotgun should mean that the app does not need to be reloaded after changes to the code base however it interacts with sinatra and other aspects of the code in strange ways, so using `ruby app.rb` may be safer.
