@@ -34,7 +34,7 @@ feature "players can attack each other and get a confirmation" do
   scenario "player gets confirmation after attack" do
     sign_in_and_play
     click_button "Attack"
-    expect(page).to have_content("Successful attack!")
+    expect(page).to have_content("Kat attacked Bob")
   end
 
 end
