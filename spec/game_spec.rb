@@ -4,22 +4,20 @@ describe Game do
 
   let(:stefan) { spy("Player") }
   let(:kat) { spy("Player") }
-
   let(:bob) { spy("Player") }
 
   before(:each) do
     allow(stefan).to receive(:points).and_return(60)
     allow(kat).to receive(:points).and_return(60)
-
     allow(bob).to receive(:points).and_return(0)
   end
 
   subject(:game) { described_class.new(stefan, kat) }
-
   subject(:lost_game) { described_class.new(stefan, bob) }
+  
 
-  context "upon initialisation" do
-    it 'the game starts with two player objects' do
+  context "#initialize" do
+    it 'starts with two player objects' do
       expect(game.player_one).to eq stefan
       expect(game.player_two).to eq kat
     end
