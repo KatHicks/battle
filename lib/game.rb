@@ -1,14 +1,22 @@
 class Game
 
+  @instance = nil
+
   attr_reader :player_one, :player_two, :turns
 
   def initialize(player_one, player_two)
     @player_one = player_one
     @player_two = player_two
-    @turns = {
-      attacker: player_one,
-      attacked: player_two
-    }
+    @turns = {attacker: player_one, attacked: player_two}
+    self.class.instance = self
+  end
+
+  def self.instance
+    @instance
+  end
+
+  def self.instance=(something)
+    @instance = something
   end
 
   def attack

@@ -16,18 +16,18 @@ class Battle < Sinatra::Base
   post '/names' do
     p_one = Player.new(params[:p1_name])
     p_two = Player.new(params[:p2_name])
-    $game = Game.new(p_one, p_two)
+    @game = Game.new(p_one, p_two)
 
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @game = Game.instance
     erb(:play)
   end
 
   get '/attack' do
-    @game = $game
+    @game = Game.instance
     @game.attack
     if @game.game_over?
       redirect '/game_over'
@@ -38,7 +38,7 @@ class Battle < Sinatra::Base
   end
 
   get '/game_over' do
-    @game = $game
+    @game = Game.instance
     erb(:game_over)
   end
 
