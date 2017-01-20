@@ -21,13 +21,15 @@ class Battle < Sinatra::Base
     redirect '/play'
   end
 
-  get '/play' do
+  before do
     @game = Game.instance
+  end
+
+  get '/play' do
     erb(:play)
   end
 
   get '/attack' do
-    @game = Game.instance
     @game.attack
     if @game.game_over?
       redirect '/game_over'
@@ -38,7 +40,6 @@ class Battle < Sinatra::Base
   end
 
   get '/game_over' do
-    @game = Game.instance
     erb(:game_over)
   end
 
