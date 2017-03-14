@@ -8,4 +8,5 @@ gem 'rspec'
 gem 'capybara'
 gem 'shotgun'
 gem 'selenium-webdriver'
+gem 'simplecov'
 gem 'coveralls', require: false

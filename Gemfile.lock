@@ -90,6 +90,7 @@ DEPENDENCIES
   rspec-sinatra
   selenium-webdriver
   shotgun
+  simplecov
   sinatra
 
 RUBY VERSION
