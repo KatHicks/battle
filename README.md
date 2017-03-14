@@ -1,6 +1,7 @@
-# Learning web application
+# Battle
+### Makers Academy Week No. 3
 
-### Week 3 at Makers Academy
+[![Code Climate](https://codeclimate.com/github/KatHicks/battle/badges/gpa.svg)](https://codeclimate.com/github/KatHicks/battle)
 
 **Goal:**
 
