@@ -1,7 +1,7 @@
 # Battle
 ### Makers Academy Week No. 3
 
-[![Code Climate](https://codeclimate.com/github/KatHicks/battle/badges/gpa.svg)](https://codeclimate.com/github/KatHicks/battle)
+[![Build Status](https://travis-ci.org/KatHicks/battle.svg?branch=master)](https://travis-ci.org/KatHicks/battle) [![Coverage Status](https://coveralls.io/repos/github/KatHicks/battle/badge.svg?branch=master)](https://coveralls.io/github/KatHicks/battle?branch=master) [![Code Climate](https://codeclimate.com/github/KatHicks/battle/badges/gpa.svg)](https://codeclimate.com/github/KatHicks/battle)
 
 **Goal:**
 
