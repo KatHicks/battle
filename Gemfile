@@ -7,3 +7,4 @@ gem 'rspec-sinatra'
 gem 'capybara'
 gem 'shotgun'
 gem 'selenium-webdriver'
+gem 'coveralls', require: false
