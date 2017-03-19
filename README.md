@@ -3,15 +3,9 @@
 
 [![Build Status](https://travis-ci.org/KatHicks/battle.svg?branch=master)](https://travis-ci.org/KatHicks/battle) [![Coverage Status](https://coveralls.io/repos/github/KatHicks/battle/badge.svg?branch=master)](https://coveralls.io/github/KatHicks/battle?branch=master) [![Code Climate](https://codeclimate.com/github/KatHicks/battle/badges/gpa.svg)](https://codeclimate.com/github/KatHicks/battle)
 
-**Goal:**
+### Instructions
 
-- Can you build a web app?
-
-**Project:**
-
-Create a basic online game called 'Battle' that satisfies the following user stories.
-
-**User stories:**
+We worked through the challenges throughout the week in rotating pairs. Aim of the challenge was to create a basic online game called 'Battle' that satisfies the following user stories:
 
 ```
 As two Players,
@@ -51,14 +45,44 @@ So I can Lose a game of Battle,
 I want to see a 'Lose' message if I reach 0HP first
 ```
 
-**Instructions for use:**
+### Objectives
 
-- Start by installing all of the dependencies using bundler:
+* Are you having fun?
+* Are you a better developer than you were yesterday?
+* **Can you build a web app?**
 
-`$ bundle install`
+### Using my application
 
-- Run the app on a local host on the command line using either:
+* Download the source code using `$ git clone`
+* Navigate into the root of the directory using `$ cd`
+* Install all the dependencies by running the command `$ bundle` in the root directory
+* Run the app locally by typing either `$ ruby app.rb` or `$ shotgun config.ru` in the command line
+  * Note that shotgun should mean that the app does not need to be reloaded after changes to the code base
 
-`$ ruby app.rb` or `$ shotgun config.ru`
+### Running the tests
 
-  - Note that shotgun should mean that the app does not need to be reloaded after changes to the code base however it interacts with sinatra and other aspects of the code in strange ways, so using `ruby app.rb` may be safer.
+* Within the root of the directory, run `$ rspec` to run the tests and see the results in the command line
+
+### Dependencies
+
+* Application written in **Ruby 2.3.3**
+* Built using the **Sinatra** web framework
+* Uses the **Shotgun** gem so that the app can reload changes to the code base when running locally
+* Unit tests written in **RSpec**
+* Feature tests written using **RSpec** and **Capybara**
+
+### Approach
+
+*
+
+### Reflections
+
+*
+
+### Ideas for extension
+
+*
+
+### Collaborators
+
+Pedro Castanheira, Stefan Liute
